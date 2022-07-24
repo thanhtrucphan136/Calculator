@@ -10,39 +10,35 @@
 </head>
 <body>
     <div class="calculator">
-        <div id="display">
-            <div class="operations">1 + 2</div>
-            <div class="result">= 3</div>
-        </div>
+        <div id="display"></div>
         <div id="numpad">
             <div class="1st-line">
-                <button>AC</button>
-                <button>+/-</button>
-                <button>%</button>
-                <button>/</button>
-            </div>
+                <input type="button" value="AC" class="clear-btn" onclick="clear()">
+                <input type="button" value="+/-">
+                <input type="button" value="%">
+                <input type="button" value="/" class="operator">
             <div class="2nd-line">
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>x</button>
+                <input type="button" value="7">
+                <input type="button" value="8">
+                <input type="button" value="9">
+                <input type="button" value="x" class="operator">
             </div>
             <div class="3rd-line">
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>-</button>
+                <input type="button" value="4">
+                <input type="button" value="5">
+                <input type="button" value="6">
+                <input type="button" value="-" class="operator">
             </div>
             <div class="4th-line">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>+</button>
+                <input type="button" value="1">
+                <input type="button" value="2">
+                <input type="button" value="3">
+                <input type="button" value="+" class="operator">
             </div>
             <div class="5th-line">
-                <button>0</button>
-                <button>.</button>
-                <button>=</button>
+                <input type="button" value="0">
+                <input type="button" value=".">
+                <input type="button" value="=" class="operator">
             </div>
         </div>
     </div>
