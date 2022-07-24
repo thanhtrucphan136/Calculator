@@ -11,7 +11,7 @@ function display(number){
     if (number == 'AC'){
         clear();
     }else{
-        displayScreen.textContent = number;
+        displayScreen.textContent += number;
         displayStorage += number;
         console.log(displayStorage);
     }
@@ -39,6 +39,23 @@ function divide(a,b){
     return a / b;
 }
 
+function operate(a, b , operator){
+    a = Number(a);
+    b = Number(b);
+    switch(operator){
+        case '+':
+            return add(a,b);
+        case '-':
+            return subtract(a,b);
+        case 'x':
+            return multiply(a,b);
+        case '/':
+            if (b === 0) return 'ERROR'
+            return divide(a,b);
+        default:
+            return
+    }
+}
 /*
 console.log(add(20,1));
 console.log(subtract(10,5));
