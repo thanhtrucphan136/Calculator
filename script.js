@@ -6,7 +6,7 @@ const nums = numpad.querySelectorAll('.num');
 let currentNum = '';
 let numberStorage = '';
 let operatorStorage = '';
-let currentOprator = '';
+let currentOprator = null;
 
 //display numbers
 nums.forEach((num) => 
@@ -66,10 +66,12 @@ operators.forEach((operator) =>
     operator.addEventListener('click', () => storeNumber(operator.value)));
 
 function storeNumber(operator){
+    if (currentOprator !== null) equal()
     numberStorage = currentNum;
     currentOprator = operator;
     currentNum = '0';
     console.log(numberStorage);
+    console.log(currentNum);
 }
 
 const equalBtn = document.getElementById('equal-btn');
@@ -80,6 +82,7 @@ function equal(){
     let result = operate(Number(numberStorage), Number(currentNum), currentOprator);
     displayScreen.textContent = result;
     currentNum = result;
+    currentOprator = null;
 }
 
 function add(a,b){
