@@ -1,10 +1,12 @@
 
 const displayScreen = document.getElementById('display');
 const numpad = document.getElementById('numpad');
-let nums = numpad.querySelectorAll('.num');
+const nums = numpad.querySelectorAll('.num');
 
+let currentNum = '';
 let numberStorage = '';
 let operatorStorage = '';
+let currentOprator = '';
 
 //display numbers
 nums.forEach((num) => 
@@ -12,12 +14,12 @@ nums.forEach((num) =>
 );
 
 function displayNum(number){
-    if (displayScreen.textContent == '0'){
+    if (displayScreen.textContent == '0' || currentNum == '0'){
         displayScreen.textContent = number;
+        currentNum = number;
     }else{
         displayScreen.textContent += number;
-        numberStorage += number;
-        console.log(numberStorage);
+        currentNum += number;
     }
 }
 
@@ -27,7 +29,6 @@ clearBtn.addEventListener('click' ,clear);
 
 function clear(){
     displayScreen.textContent = 0;
-    //displayStorage = displayStorage.slice(0,-1);
 }
 
 //negative or positive button
@@ -36,6 +37,7 @@ npBtn.addEventListener('click', negativeOrPositive);
 
 function negativeOrPositive(){
     displayScreen.textContent *=-1;
+    currentNum *=1;
 }
 
 //percent button
@@ -44,6 +46,7 @@ percentBtn.addEventListener('click', percent);
 
 function percent(){
     displayScreen.textContent /=100;
+    currentNum /= 100;
 }
 
 //dot button
@@ -53,9 +56,31 @@ dotBtn.addEventListener('click', decimal);
 function decimal(){
     if (!displayScreen.textContent.includes('.')){
         displayScreen.textContent += '.';
+        currentNum += '.';
     }
 }
 
+//operating
+const operators = document.querySelectorAll('.operator');
+operators.forEach((operator) => 
+    operator.addEventListener('click', () => storeNumber(operator.value)));
+
+function storeNumber(operator){
+    numberStorage = currentNum;
+    currentOprator = operator;
+    currentNum = '0';
+    console.log(numberStorage);
+}
+
+const equalBtn = document.getElementById('equal-btn');
+equalBtn.addEventListener('click', equal);
+
+//equal function
+function equal(){
+    let result = operate(Number(numberStorage), Number(currentNum), currentOprator);
+    displayScreen.textContent = result;
+    currentNum = result;
+}
 
 function add(a,b){
     return a + b;
@@ -74,10 +99,7 @@ function divide(a,b){
 }
 
 
-
-function operate(a, b , operator){
-    a = Number(a);
-    b = Number(b);
+function operate(a,b, operator){
     switch(operator){
         case '+':
             return add(a,b);
