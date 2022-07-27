@@ -44,11 +44,11 @@ function resize(){
 }
 
 
-//clear current number when click AC button
+//clear button
 const clearBtn = document.getElementById('clear-btn');
 clearBtn.addEventListener('click',clear);
 
-
+//C button
 function clear(){
     displayScreen.textContent = 0;
     displayScreen.style.fontSize = '75px';
@@ -58,6 +58,7 @@ function clear(){
     }
 }
 
+//AC button
 function clearEverything(){
     displayScreen.textContent = 0;
     currentNum = 0;

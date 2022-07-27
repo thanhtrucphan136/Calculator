@@ -9,7 +9,7 @@ body{
     background-color: #f7c682;
 }
 .calculator{
-    background-color: #1c1c1c;
+    background-color: black;
     color: white;
     width: 360px;
     height: 720px;
@@ -23,10 +23,15 @@ body{
 
 .time-and-battery{
     display: flex;
+    justify-content: space-between;
+}
+#battery{
+    margin: 18px 31.5px;
 }
 
 #time{
     margin: 18px 31.5px;
+    font-size: 15px;
 }
 
 .display-container{
