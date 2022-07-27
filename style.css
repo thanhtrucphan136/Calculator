@@ -1,5 +1,4 @@
 *{
-    margin: 0;
     text-align: center;
 }
 body{
@@ -64,6 +63,7 @@ input{
     cursor: pointer;
     margin-bottom: 10px;
     margin-left: 2px;
+    text-align: center;
 }
 
 .zero{
@@ -104,6 +104,7 @@ input{
     background-color: #d4d4d2;
     color: black;
     font-size: 27px;
+    text-align: center;
 }
 
 #clear-btn:hover{
