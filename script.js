@@ -23,12 +23,22 @@ function displayNum(number){
     }
 }
 
-//clear button
+//clear current number when click AC button
 const clearBtn = document.getElementById('clear-btn');
 clearBtn.addEventListener('click' ,clear);
 
 function clear(){
     displayScreen.textContent = 0;
+}
+
+//clear everything  when double click the AC button
+clearBtn.addEventListener('dblclick', clearEverything);
+
+function clearEverything(){
+    displayScreen.textContent = 0;
+    currentNum = 0;
+    numberStorage = 0;
+    currentOprator = null;
 }
 
 //negative or positive button
@@ -117,3 +127,5 @@ function operate(a,b, operator){
             return
     }
 }
+
+

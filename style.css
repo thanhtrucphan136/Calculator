@@ -79,12 +79,12 @@ input{
 }
 
 .operator:hover{
-    background-color: white;
+    background-color: #f6f4f4;
     color: #ff9500;
 }
 
 #equal-btn:hover{
-    background-color: white;
+    background-color: #f6f4f4;
     color: #ff9500;
 }
 
