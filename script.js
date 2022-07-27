@@ -7,6 +7,7 @@ let currentNum = '';
 let numberStorage = '';
 let operatorStorage = '';
 let currentOprator = null;
+let operatorBtn = null;
 
 //display numbers
 nums.forEach((num) => 
@@ -73,15 +74,18 @@ function decimal(){
 //operating
 const operators = document.querySelectorAll('.operator');
 operators.forEach((operator) => 
-    operator.addEventListener('click', () => storeNumber(operator.value)));
+    operator.addEventListener('click', () => storeNumber(operator)));
 
 function storeNumber(operator){
     if (currentOprator !== null) equal()
+    operator.style.backgroundColor = '#f6f4f4';
+    operator.style.color = '#ff9500';
     numberStorage = currentNum;
-    currentOprator = operator;
+    operatorBtn = operator;
+    currentOprator = operator.value;
     currentNum = '0';
-    console.log(numberStorage);
-    console.log(currentNum);
+
+    
 }
 
 const equalBtn = document.getElementById('equal-btn');
@@ -93,6 +97,8 @@ function equal(){
     displayScreen.textContent = result;
     currentNum = result;
     currentOprator = null;
+    operatorBtn.style.backgroundColor = '#ff9500';
+    operatorBtn.style.color = '#f6f4f4';
 }
 
 function add(a,b){
