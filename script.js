@@ -120,7 +120,7 @@ function operate(a,b, operator){
             return subtract(a,b);
         case 'x':
             return multiply(a,b);
-        case '/':
+        case '÷':
             if (b === 0) return 'ERROR'
             return divide(a,b);
         default:
