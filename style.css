@@ -1,12 +1,15 @@
 *{
     margin: 0;
+    text-align: center;
 }
 body{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: "Helvetica Ultra Light", sans-serif;
     background-color: #f7c682;
+    height: 100vh;
 }
 .calculator{
     background-color: black;
@@ -14,7 +17,6 @@ body{
     width: 360px;
     height: 720px;
     border-radius: 45px;
-    margin-top: 40px;
 }
 
 .upper{
@@ -116,5 +118,21 @@ input{
     background-color: #f1f1ee;
 }
 
+.footer{
+    margin-top: 50px;
+    color: #9a5a01;
+}
 
-   
+a{
+    color: #9a5a01;
+}
+
+.github{
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.github:hover{
+    transform: scale(1.1) rotate(360deg);
+}
