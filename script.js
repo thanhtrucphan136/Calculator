@@ -15,6 +15,7 @@ nums.forEach((num) =>
 );
 
 function displayNum(number){
+    clearBtn.value = 'C';
     if (displayScreen.textContent.length < 11){
         if (displayScreen.textContent == '0' || currentNum == '0'){
             displayScreen.textContent = number;
@@ -45,15 +46,17 @@ function resize(){
 
 //clear current number when click AC button
 const clearBtn = document.getElementById('clear-btn');
-clearBtn.addEventListener('click' ,clear);
+clearBtn.addEventListener('click',clear);
+
 
 function clear(){
     displayScreen.textContent = 0;
     displayScreen.style.fontSize = '75px';
+    clearBtn.value = 'AC';
+    if (clearBtn.value === 'AC'){
+        clearBtn.addEventListener('click',clearEverything);
+    }
 }
-
-//clear everything  when double click the AC button
-clearBtn.addEventListener('dblclick', clearEverything);
 
 function clearEverything(){
     displayScreen.textContent = 0;
