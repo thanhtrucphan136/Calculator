@@ -20,12 +20,10 @@ function displayNum(number){
         if (displayScreen.textContent == '0' || currentNum == '0'){
             displayScreen.textContent = number;
             currentNum = number;
-            console.log(currentNum);
         }else{
             displayScreen.textContent = displayScreen.textContent.split(',').join('');
             displayScreen.textContent = parseFloat(displayScreen.textContent + number).toLocaleString();
             currentNum += number;
-            console.log(currentNum);
             if (displayScreen.textContent.length > 8) resize()
         }
     }
@@ -111,8 +109,6 @@ function storeNumber(operator){
     operatorBtn = operator;
     currentOprator = operator.value;
     currentNum = '0';
-    console.log(numberStorage);
-    
 }
 
 const equalBtn = document.getElementById('equal-btn');
