@@ -11,10 +11,6 @@ body{
     height: 100vh;
     margin-top: 10px;
 }
-h1{
-    color: #9a5a01;
-    font-size: larger;
-}
 .calculator{
     background-color: black;
     color: white;
@@ -72,13 +68,15 @@ input{
 }
 
 .zero{
+    background-color: #505050;
+    color: white;
     width: 150.3px;
     border-radius: 36px;
     text-align: left;
     padding-left: 27px;
 }
 
-.num, #dot-btn{
+.nonezero, #dot-btn{
     background-color: #505050;
     color: white;
     text-align: center;
