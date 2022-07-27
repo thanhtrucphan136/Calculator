@@ -91,6 +91,7 @@ input{
 
 #clear-btn, #np-btn, #percent-btn{
     background-color: #d4d4d2;
+    color: black;
     font-size: 30px;
 }
 

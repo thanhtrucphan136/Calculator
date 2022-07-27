@@ -19,7 +19,8 @@ function displayNum(number){
         displayScreen.textContent = number;
         currentNum = number;
     }else{
-        displayScreen.textContent += number;
+        displayScreen.textContent = displayScreen.textContent.split(',').join('');
+        displayScreen.textContent = parseFloat(displayScreen.textContent+ number).toLocaleString();
         currentNum += number;
     }
 }
@@ -40,6 +41,8 @@ function clearEverything(){
     currentNum = 0;
     numberStorage = 0;
     currentOprator = null;
+    operatorBtn.style.backgroundColor = '#ff9500';
+    operatorBtn.style.color = '#f6f4f4';
 }
 
 //negative or positive button
@@ -94,7 +97,7 @@ equalBtn.addEventListener('click', equal);
 //equal function
 function equal(){
     let result = operate(Number(numberStorage), Number(currentNum), currentOprator);
-    displayScreen.textContent = result;
+    displayScreen.textContent = parseFloat(result).toLocaleString();
     currentNum = result;
     currentOprator = null;
     operatorBtn.style.backgroundColor = '#ff9500';
