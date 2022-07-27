@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calculator{
+    background-color: #1c1c1c;
+    color: white;
+    width: 400px;
+    height: 800px;
+    border-radius: 50px;
+}
+
+.upper{
+    height: 300px;
+}
+
+.time-and-battery{
+    display: flex;
+}
+
+#time{
+    margin: 20px 35px;
+}
+
+.display-container{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 35px;
+}
+
+#display{
+    margin-top: 130px;
+    font-size: 80px;
+}
+
+#numpad{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+input{
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    font-size: 40px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 13px;
+    margin-left: 5px;
+}
+
+.zero{
+    width: 167px;
+    border-radius: 40px;
+    text-align: left;
+    padding-left: 30px;
+}
+
+.num, #dot-btn{
+    background-color: #505050;
+    color: white;
+}
+.num:hover{
+    background-color: #6e6d6d;
+}
+
+#dot-btn:hover{
+    background-color: #6e6d6d;
+}
+
+.operator, #equal-btn{
+    background-color: #ff9500;
+    color: white;
+}
+
+.operator:hover{
+    background-color: white;
+    color: #ff9500;
+}
+
+#equal-btn:hover{
+    background-color: white;
+    color: #ff9500;
+}
+
+#clear-btn, #np-btn, #percent-btn{
+    background-color: #d4d4d2;
+}
+
+#clear-btn:hover{
+    background-color: #f1f1ee;
+}
+
+#np-btn:hover{
+    background-color: #f1f1ee;
+}
+
+#percent-btn:hover{
+    background-color: #f1f1ee;
+}
+
+
+   
