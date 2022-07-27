@@ -15,15 +15,33 @@ nums.forEach((num) =>
 );
 
 function displayNum(number){
-    if (displayScreen.textContent == '0' || currentNum == '0'){
-        displayScreen.textContent = number;
-        currentNum = number;
-    }else{
-        displayScreen.textContent = displayScreen.textContent.split(',').join('');
-        displayScreen.textContent = parseFloat(displayScreen.textContent+ number).toLocaleString();
-        currentNum += number;
+    if (displayScreen.textContent.length < 11){
+        if (displayScreen.textContent == '0' || currentNum == '0'){
+            displayScreen.textContent = number;
+            currentNum = number;
+            console.log(currentNum);
+        }else{
+            displayScreen.textContent = displayScreen.textContent.split(',').join('');
+            displayScreen.textContent = parseFloat(displayScreen.textContent + number).toLocaleString();
+            currentNum += number;
+            console.log(currentNum);
+            if (displayScreen.textContent.length > 8) resize()
+        }
     }
 }
+
+function resize(){
+    let Numlength = displayScreen.textContent.length;
+    if (Numlength == 9){
+        displayScreen.style.fontSize = '63px';
+    }else if(Numlength == 10){
+        displayScreen.style.fontSize = '56px';
+    }
+    else if (Numlength == 11){
+        displayScreen.style.fontSize = '49px';
+    }
+}
+
 
 //clear current number when click AC button
 const clearBtn = document.getElementById('clear-btn');
@@ -31,6 +49,7 @@ clearBtn.addEventListener('click' ,clear);
 
 function clear(){
     displayScreen.textContent = 0;
+    displayScreen.style.fontSize = '75px';
 }
 
 //clear everything  when double click the AC button
@@ -43,6 +62,7 @@ function clearEverything(){
     currentOprator = null;
     operatorBtn.style.backgroundColor = '#ff9500';
     operatorBtn.style.color = '#f6f4f4';
+    displayScreen.style.fontSize = '75px';
 }
 
 //negative or positive button
@@ -87,7 +107,7 @@ function storeNumber(operator){
     operatorBtn = operator;
     currentOprator = operator.value;
     currentNum = '0';
-
+    console.log(numberStorage);
     
 }
 
@@ -96,6 +116,8 @@ equalBtn.addEventListener('click', equal);
 
 //equal function
 function equal(){
+    console.log(currentNum);
+    console.log(currentOprator);
     let result = operate(Number(numberStorage), Number(currentNum), currentOprator);
     displayScreen.textContent = parseFloat(result).toLocaleString();
     currentNum = result;
